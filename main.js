@@ -1,62 +1,57 @@
 var timer = 256;
 var tickRate = 16;
 var visualRate = 256;
-var resources = { gold: 0, pickaxe: 1 };
-var costs = { pickaxe: 15, miner: 200, miner_pickaxe: 15 };
-var growthRate = { pickaxe: 1.25, miner: 1.25, miner_pickaxe: 1.75 };
+var resources = { experience: 0, monster_level: 1 };
+var costs = { monster_level: 15, feeder: 200, feeder_level: 15 };
+var growthRate = { monster_level: 1.25, feeder: 1.25, feeder_level: 1.75 };
 
-var increments = [{ input: ['miner', 'miner_pickaxe'], output: 'gold' }];
-
-// hello world
-
-console.log('hello world');
+var increments = [{ input: ['feeder', 'feeder_level'], output: 'experience' }];
 
 var unlocks = {
-	pickaxe: { gold: 10 },
-	miner: { gold: 100 },
-	miner_pickaxe: { miner: 1 },
+	monster_level: { experience: 10 },
+	feeder: { experience: 100 },
+	feeder_level: { feeder: 1 },
 };
 
-console.log(mineGold(3));
-
-function mineGold(num) {
-	resources['gold'] += num * resources['pickaxe'];
+function gainExp(num) {
+	resources['experience'] += num * resources['monster_level'];
 	updateText();
 }
 
-function upgradeMinerPickaxe(num) {
-	if (resources['gold'] >= costs['miner_pickaxe'] * num) {
-		resources['miner_pickaxe'] += num;
-		resources['gold'] -= num * costs['miner_pickaxe'];
+function levelUpFeeder(num) {
+	if (resources['experience'] >= costs['feeder_level'] * num) {
+		resources['feeder_level'] += num;
+		resources['experience'] -= num * costs['feeder_level'];
 
-		costs['miner_pickaxe'] *= growthRate['miner_pickaxe'];
+		costs['feeder_level'] *= growthRate['feeder_level'];
+
+		updateText();
+	}
+}
+
+function levelUpMonster(num) {
+	if (resources['experience'] >= costs['monster_level'] * num) {
+		resources['monster_level'] += num;
+		resources['experience'] -= num * costs['monster_level'];
+
+		costs['monster_level'] *= growthRate['monster_level'];
 
 		updateText();
 	}
 }
 
-function upgradePickaxe(num) {
-	if (resources['gold'] >= costs['pickaxe'] * num) {
-		resources['pickaxe'] += num;
-		resources['gold'] -= num * costs['pickaxe'];
-
-		costs['pickaxe'] *= growthRate['pickaxe'];
-
-		updateText();
-	}
-}
-function hireMiner(num) {
-	if (resources['gold'] >= costs['miner'] * num) {
-		if (!resources['miner']) {
-			resources['miner'] = 0;
+function hireFeeder(num) {
+	if (resources['experience'] >= costs['feeder'] * num) {
+		if (!resources['feeder']) {
+			resources['feeder'] = 0;
 		}
-		if (!resources['miner_pickaxe']) {
-			resources['miner_pickaxe'] = 1;
+		if (!resources['feeder_level']) {
+			resources['feeder_level'] = 1;
 		}
-		resources['miner'] += num;
-		resources['gold'] -= num * costs['miner'];
+		resources['feeder'] += num;
+		resources['experience'] -= num * costs['feeder'];
 
-		costs['miner'] *= growthRate['miner'];
+		costs['feeder'] *= growthRate['feeder'];
 
 		updateText();
 	}

@@ -4,46 +4,45 @@
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body>
-		<script type="text/javascript" src="main.js"></script>
 		<div class="row">
 			<div class="column">
-				Gold: <span class="gold"></span>
-				<span style="display: none" class="show_pickaxe"
-					>Pickaxe Level: <span class="pickaxe"></span
+				Experience: <span class="experience"></span>
+				<span style="display: none" class="show_monster_level"
+					>Monster Level: <span class="monster_level"></span
 				></span>
-				<span style="display: none" class="show_miner"
-					>Miners: <span class="miner"></span
+				<span style="display: none" class="show_feeder"
+					>Feeders: <span class="feeder"></span
 				></span>
-				<span style="display: none" class="show_miner_pickaxe"
-					>Miner Pickaxe Level: <span class="miner_pickaxe"></span
+				<span style="display: none" class="show_feeder_level"
+					>Feeders Level: <span class="feeder_level"></span
 				></span>
 			</div>
 			<div class="column">
-				<button onClick="mineGold(1)">Mine Gold</button>
+				<button onClick="gainExp(1)">Gain Experience Points</button>
 				<button
 					style="display: none"
-					class="show_pickaxe"
-					onClick="upgradePickaxe(1)"
+					class="show_monster_level"
+					onClick="levelUpMonster(1)"
 				>
-					Upgrade Pickaxe: $<span class="pickaxe_cost"></span>
+					Level up monster: $<span class="monster_level_cost"></span>
 				</button>
 				<button
 					style="display: none"
-					class="show_miner"
-					onClick="hireMiner(1)"
+					class="show_feeder"
+					onClick="hireFeeder(1)"
 				>
-					Hire Miners: $<span class="miner_cost"></span>
+					Hire Feeders: $<span class="feeder_cost"></span>
 				</button>
 				<button
 					style="display: none"
-					class="show_miner"
-					onClick="upgradeMinerPickaxe(1)"
+					class="show_feeder"
+					onClick="levelUpFeeder(1)"
 				>
-					Upgrade Miners' Pickaxes: $<span
-						class="miner_pickaxe_cost"
-					></span>
+					Level up Feeders: $<span class="feeder_level_cost"></span>
 				</button>
 			</div>
 		</div>
 	</body>
+
+	<script type="text/javascript" src="main.js"></script>
 </html>
