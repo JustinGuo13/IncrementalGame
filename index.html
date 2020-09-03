@@ -1,47 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="interface.css" />
 	</head>
 	<body>
-		<div class="row">
-			<div class="column">
-				Experience: <span class="experience"></span>
-				<span style="display: none" class="show_monster_level"
-					>Monster Level: <span class="monster_level"></span
-				></span>
-				<span style="display: none" class="show_feeder"
-					>Feeders: <span class="feeder"></span
-				></span>
-				<span style="display: none" class="show_feeder_level"
-					>Feeders Level: <span class="feeder_level"></span
-				></span>
+		<header>
+			<div class="row">
+				<div class="description_column">
+					Experience: <span class="experience"></span>
+					<span style="display: none" class="show_monster_level"
+						>Monster Level: <span class="monster_level"></span
+					></span>
+					<span style="display: none" class="show_feeder"
+						>Feeders: <span class="feeder"></span
+					></span>
+					<span style="display: none" class="show_feeder_level"
+						>Feeders Level: <span class="feeder_level"></span
+					></span>
+				</div>
+
+				<div class="update_column">
+					<button onClick="gainExp(1)">Gain Experience Points</button>
+					<button
+						style="display: none"
+						class="show_monster_level"
+						onClick="levelUpMonster(1)"
+					>
+						Level up monster: $<span
+							class="monster_level_cost"
+						></span>
+					</button>
+					<button
+						style="display: none"
+						class="show_feeder"
+						onClick="hireFeeder(1)"
+					>
+						Hire Feeders: $<span class="feeder_cost"></span>
+					</button>
+					<button
+						style="display: none"
+						class="show_feeder"
+						onClick="levelUpFeeder(1)"
+					>
+						Level up Feeders: $<span
+							class="feeder_level_cost"
+						></span>
+					</button>
+				</div>
+
+				<div class="monster_column">
+					
+				</div>
 			</div>
-			<div class="column">
-				<button onClick="gainExp(1)">Gain Experience Points</button>
-				<button
-					style="display: none"
-					class="show_monster_level"
-					onClick="levelUpMonster(1)"
-				>
-					Level up monster: $<span class="monster_level_cost"></span>
-				</button>
-				<button
-					style="display: none"
-					class="show_feeder"
-					onClick="hireFeeder(1)"
-				>
-					Hire Feeders: $<span class="feeder_cost"></span>
-				</button>
-				<button
-					style="display: none"
-					class="show_feeder"
-					onClick="levelUpFeeder(1)"
-				>
-					Level up Feeders: $<span class="feeder_level_cost"></span>
-				</button>
-			</div>
-		</div>
+		</header>
+
+		
 	</body>
 
 	<script type="text/javascript" src="main.js"></script>
