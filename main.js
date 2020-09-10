@@ -2,15 +2,16 @@ var timer = 256;
 var tickRate = 16;
 var visualRate = 256;
 var resources = { experience: 0, monster_level: 1 };
-var costs = { monster_level: 15, feeder: 200, feeder_level: 15 };
-var growthRate = { monster_level: 1.25, feeder: 1.25, feeder_level: 1.75 };
+var costs = { monster_level: 10, feeder: 20, feeder_level: 15 };
+var growthRate = { monster_level: 1.05, feeder: 1.05, feeder_level: 1.05 };
 
 var increments = [{ input: ['feeder', 'feeder_level'], output: 'experience' }];
 
 var unlocks = {
 	monster_level: { experience: 10 },
-	feeder: { experience: 100 },
+	feeder: { experience: 20 },
 	feeder_level: { feeder: 1 },
+	// evolve_level: { monster_level: 10 },
 };
 
 function gainExp(num) {
@@ -54,6 +55,12 @@ function hireFeeder(num) {
 		costs['feeder'] *= growthRate['feeder'];
 
 		updateText();
+	}
+}
+
+function evolveMonster() {
+	if (resources['monster_level'] == 10) {
+		console.log('true');
 	}
 }
 

@@ -15,7 +15,7 @@ body {
 	color: rgb(255, 255, 255);
 	font-family: 'Lato', 'Arial', sans-serif;
 	font-weight: 300;
-	font-size: 20px;
+	font-size: 1.2rem;
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
 }
@@ -32,8 +32,8 @@ body {
 	visibility: hidden;
 }
 
-header {
-	background-image: url(img/cave.gif);
+body {
+	background-image: url(img/forest.png);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -48,11 +48,12 @@ header {
 /* ----------------------------------------------- */
 .description_column {
 	float: left;
-	font-size: 160%;
+	font-size: 120%;
 	text-transform: uppercase;
 	word-spacing: 2px;
-	margin: 20px;
-	letter-spacing: 1px;
+	margin-top: 10vh;
+	margin-left: 10vh;
+	letter-spacing: 5px;
 }
 
 /* ----------------------------------------------- */
@@ -60,11 +61,12 @@ header {
 /* ----------------------------------------------- */
 .update_column {
 	float: right;
-	font-size: 160%;
+	font-size: 120%;
 	text-transform: uppercase;
 	word-spacing: 2px;
-	margin: 20px;
-	letter-spacing: 1px;
+	margin-top: 15vh;
+	margin-right: 10vh;
+	letter-spacing: 2px;
 }
 /* ----------------------------------------------- */
 /* BUTTON */
@@ -81,7 +83,7 @@ button {
 	text-decoration: none;
 	display: inline-block;
 	width: 50%;
-	font-size: 16px;
+	font-size: 1.2rem;
 }
 
 button:hover {
@@ -96,12 +98,28 @@ button:active {
 /* MONSTER  */
 /* ----------------------------------------------- */
 
-.monster_column {
+.monster_colmun {
+	text-align: center;
+}
+.monster_image {
 	background-image: url(img/slime.gif);
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: local;
-	width: 100%;
 	height: 100vh;
+	width: 100%;
 	z-index: 2;
+}
+
+.monster_evolve {
+	background-color: #0aff4bf3;
+	border: none;
+	border-radius: 10px;
+	text-align: center;
+	text-decoration: none;
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+	margin-top: 10vh;
+	margin-left: 34vh;
+	width: 10%;
 }
