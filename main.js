@@ -2,7 +2,14 @@ var timer = 256;
 var tickRate = 16;
 var visualRate = 256;
 var resources = { experience: 0, monster_level: 1 };
-var costs = { monster_level: 10, feeder: 20, feeder_level: 15 };
+var costs = {
+	monster_level: 10,
+	feeder: 20,
+	feeder_level: 15,
+	evolve_level: 0,
+};
+var alertPopup = true;
+
 var growthRate = { monster_level: 1.05, feeder: 1.05, feeder_level: 1.05 };
 
 var increments = [{ input: ['feeder', 'feeder_level'], output: 'experience' }];
@@ -11,8 +18,22 @@ var unlocks = {
 	monster_level: { experience: 10 },
 	feeder: { experience: 20 },
 	feeder_level: { feeder: 1 },
-	// evolve_level: { monster_level: 10 },
+	evolve_level: { experience: 10 },
 };
+
+const name = prompt('Give your slime a name', '');
+
+if (name !== null || name !== '') {
+	const markup = `
+ <div class="monster">
+       Monster ${name}
+ </div>
+`;
+	document.getElementById('monster_name').innerHTML = markup;
+	console.log(`${name}`);
+} else {
+	prompt('Give your slime a name', '');
+}
 
 function gainExp(num) {
 	resources['experience'] += num * resources['monster_level'];
@@ -58,9 +79,44 @@ function hireFeeder(num) {
 	}
 }
 
+function replaceImageToFungi() {
+	document.getElementById('slime').src = './img/fungi.gif';
+}
+
+function replaceImageToMushroom() {
+	document.getElementById('slime').src = './img/mushroom.gif';
+}
+
+function replaceImageToHeadBang() {
+	document.getElementById('slime').src = './img/headbang.gif';
+}
+
+function replaceImageToMutantMushroom() {
+	document.getElementById('slime').src = './img/mutant_mushroom.gif';
+}
+
 function evolveMonster() {
-	if (resources['monster_level'] == 10) {
-		console.log('true');
+	if (resources['monster_level'] >= 10 && resources['monster_level'] < 20) {
+		replaceImageToMutantMushroom();
+	} else if (
+		resources['monster_level'] >= 20 &&
+		resources['monster_level'] < 30
+	) {
+		replaceImageToMushroom();
+	} else if (
+		resources['monster_level'] >= 30 &&
+		resources['monster_level'] < 40
+	) {
+		replaceImageToHeadBang();
+	} else if (
+		resources['monster_level'] >= 40 &&
+		resources['monster_level'] < Infinity
+	) {
+		replaceImageToFungi();
+		if (alertPopup) {
+			alert('Congratulation your slime is now a happy "FUNGI"!');
+			alertPopup = false;
+		}
 	}
 }
 

@@ -22,13 +22,15 @@
 				</div>
 
 				<div class="update_column">
-					<button onClick="gainExp(1)">Gain Experience Points</button>
+					<button onClick="gainExp(1)">
+						☝️Gain Experience Points
+					</button>
 					<button
 						style="display: none"
 						class="show_monster_level"
 						onClick="levelUpMonster(1)"
 					>
-						Level up monster: $<span
+						🆙Level up monster: $<span
 							class="monster_level_cost"
 						></span>
 					</button>
@@ -37,26 +39,37 @@
 						class="show_feeder"
 						onClick="hireFeeder(1)"
 					>
-						Hire Feeders: $<span class="feeder_cost"></span>
+						🤝Hire Feeders: $<span class="feeder_cost"></span>
 					</button>
 					<button
 						style="display: none"
 						class="show_feeder"
 						onClick="levelUpFeeder(1)"
 					>
-						Level up Feeders: $<span
+						🆙Level up Feeders: $<span
 							class="feeder_level_cost"
 						></span>
 					</button>
 				</div>
 
 				<div class="monster_column">
+					<div class="evolve_text">
+						<span style="display: none" class="show_evolve_level"
+							>Evolve Every 10 Levels
+							<span class="evolve_level"></span
+						></span>
+					</div>
+					<div id="monster_name"></div>
+
 					<div class="monster_image">
+						<div><img id="slime" src="./img/slime.gif" /></div>
+					</div>
+					<div class="button_evolve">
 						<button
 							class="monster_evolve"
 							onClick="evolveMonster()"
 						>
-							Evolve Monster
+							🔄Evolve Monster
 						</button>
 					</div>
 				</div>
