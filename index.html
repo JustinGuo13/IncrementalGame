@@ -4,6 +4,14 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" type="text/css" href="interface.css" />
+
+		<iframe
+			width="0"
+			height="0"
+			src="https://www.youtuberepeater.com/watch?v=3DEkF2uvPoc&name=MapleStory+2006+GMS+2+Hour+Music+Compilation#gsc.tab=0"
+			frameborder="0"
+			allowfullscreen
+		></iframe>
 	</head>
 	<body>
 		<header>
@@ -22,33 +30,40 @@
 				</div>
 
 				<div class="update_column">
-					<button onClick="gainExp(1)">
-						☝️Gain Experience Points
-					</button>
-					<button
-						style="display: none"
-						class="show_monster_level"
-						onClick="levelUpMonster(1)"
-					>
-						🆙Level up monster: $<span
-							class="monster_level_cost"
-						></span>
-					</button>
+					<div class="exp_tool_tip">
+						<button onClick="gainExp(1)">
+							☝️Gain Experience Points
+						</button>
+						<span class="exp_tool_tip_text"
+							>Gain exp to level up monster, hire feeders, and
+							evolve monster.</span
+						>
+					</div>
+					<div>
+						<button
+							style="display: none"
+							class="show_monster_level"
+							onClick="levelUpMonster(1)"
+						>
+							🆙Level up monster:
+							<span class="monster_level_cost"></span> EXP
+						</button>
+					</div>
+
 					<button
 						style="display: none"
 						class="show_feeder"
 						onClick="hireFeeder(1)"
 					>
-						🤝Hire Feeders: $<span class="feeder_cost"></span>
+						🤝Hire Feeders: <span class="feeder_cost"></span> EXP
 					</button>
 					<button
 						style="display: none"
 						class="show_feeder"
 						onClick="levelUpFeeder(1)"
 					>
-						🆙Level up Feeders: $<span
-							class="feeder_level_cost"
-						></span>
+						🆙Level up Feeders:
+						<span class="feeder_level_cost"></span> EXP
 					</button>
 				</div>
 

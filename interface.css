@@ -19,6 +19,8 @@ body {
 	font-size: 1.2rem;
 	text-rendering: optimizeLegibility;
 	overflow-x: hidden;
+	text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000,
+		1px 1px 0 #000;
 }
 
 .clearfix {
@@ -50,10 +52,10 @@ body {
 .description_column {
 	float: left;
 	font-size: 120%;
-	color: #00ff51;
+	color: #ebe70b;
 	text-transform: uppercase;
 	word-spacing: 2px;
-	margin-top: 10vh;
+	margin-top: 15vh;
 	margin-left: 10vh;
 	letter-spacing: 5px;
 }
@@ -70,6 +72,38 @@ body {
 	margin-right: 10vh;
 	letter-spacing: 2px;
 }
+
+/* Tooltip container */
+.exp_tool_tip {
+	position: relative;
+	display: inline-block;
+}
+
+/* Tooltip text */
+.exp_tool_tip .exp_tool_tip_text {
+	visibility: hidden;
+	width: 30vh;
+	color: #fff;
+	text-align: center;
+	font-size: 0.6rem;
+
+	/* Position the exp_tool_tip text */
+	position: absolute;
+	z-index: 1;
+	margin-top: 5vh;
+	margin-right: 10vh;
+
+	/* Fade in exp_tool_tip */
+	opacity: 0;
+	transition: opacity 0.5s;
+}
+
+/* Show the exp_tool_tip text when you mouse over the exp_tool_tip container */
+.exp_tool_tip:hover .exp_tool_tip_text {
+	visibility: visible;
+	opacity: 1;
+}
+
 /* ----------------------------------------------- */
 /* BUTTON */
 /* ----------------------------------------------- */
@@ -108,7 +142,7 @@ button:active {
 	background-position: center;
 	background-repeat: no-repeat;
 	background-attachment: local;
-	margin-top: 45vh;
+	margin-top: 40vh;
 	margin-left: 20vh;
 	height: 30vh;
 	width: 30vh;
@@ -119,7 +153,7 @@ button:active {
 	justify-content: center;
 	align-items: center;
 	font-size: 140%;
-	color: #00ff11;
+	color: #ffdd00;
 	text-transform: uppercase;
 	word-spacing: 2px;
 	letter-spacing: 5px;
